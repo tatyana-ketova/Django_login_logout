@@ -90,7 +90,6 @@ PASSWORD_HASHERS = [
 
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
 
-
 ]
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -132,3 +131,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [STATIC_DIR]
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+LOGIN_URL = '/basic_app/user_login'

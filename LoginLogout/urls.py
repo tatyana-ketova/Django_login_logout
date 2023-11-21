@@ -12,6 +12,7 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+    path('special/', special, name='spesial')
 """
 from django.contrib import admin
 from django.urls import path
@@ -20,10 +21,11 @@ from django.conf.urls import include
 
 import basic_app
 from basic_app import views
-from basic_app.views import index
+from basic_app.views import index,user_logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('basic_app/', include('basic_app.urls')),
+
 ]
