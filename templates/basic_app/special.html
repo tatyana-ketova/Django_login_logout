@@ -1,0 +1,29 @@
+{% extends 'basic_app/base.html' %}
+
+{% block body_block %}
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h2>{{ user.username }} portfolio</h2>
+            <p>Welcome to the portfolio page, {{ user.username }}!</p>
+
+
+
+            {% if user.userprofileinfo.portfolio_site %}
+                <p>Portfolio Site: <a href="{{ user.userprofileinfo.portfolio_site }}" target="_blank">{{ user.userprofileinfo.portfolio_site }}</a></p>
+            {% else %}
+                <p>No portfolio site provided.</p>
+            {% endif %}
+
+        </div>
+
+        <div class="col-md-6">
+            {% if user.userprofileinfo.profile_pic %}
+                <img src="{{ user.userprofileinfo.profile_pic.url }}" alt="Profile Picture" class="img-fluid rounded">
+            {% else %}
+                <p>No profile picture available.</p>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
